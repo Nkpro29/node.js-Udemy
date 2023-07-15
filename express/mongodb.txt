@@ -1,0 +1,3 @@
+
+password:fTsXjzyjhFUUk56 
+connection string: mongodb+srv://namankulshresth:<password>@cluster0.1rhpmdo.mongodb.net/
