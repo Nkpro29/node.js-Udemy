@@ -18,42 +18,24 @@ mongoose.connect(DB, {
   process.exit(1);  
 });
 
-const tourSchema = new mongoose.Schema({
-  name:{
-    type: String,
-    required: true,
-    unique:true
-  },
-  price:{
-    type: Number,
-    required:true,
-  },
-  rating:{
-    type: Number,
-    default: 4.0
-  }
-});
+// const testTour = new Tour({
+//   name:"",
+//   price:500,
+//   rating:4.7
+// });
 
-const Tour = mongoose.model('Tour', tourSchema);
-
-const testTour = new Tour({
-  name:"",
-  price:500,
-  rating:4.7
-});
-
-testTour.save().then((doc)=>{
-  console.log(doc);
-}).catch(err=>{
-  console.error('Error: ',err);
-}); 
+// testTour.save().then((doc)=>{
+//   console.log(doc);
+// }).catch(err=>{
+//   console.error('Error: ',err);
+// }); 
 
 const app = require('./app');
 
 
 // console.log(process.env);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`running on port ${port}`);
 });
