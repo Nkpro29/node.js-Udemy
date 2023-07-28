@@ -45,8 +45,20 @@ const tourSchema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   },
-  startDates:[Date]
+  startDates:[Date],
+},
+
+{
+    toJSON: {virtuals: true},
+    toObject: {virtuals: true}
 });
+
+tourSchema.virtual('durationWeeks').get(function(){
+  return this.duration/7;
+})
+//when a certain property is dependent on other property than virtual properties can be used.
+
+
 
 const Tour = mongoose.model('Tour', tourSchema);
 
